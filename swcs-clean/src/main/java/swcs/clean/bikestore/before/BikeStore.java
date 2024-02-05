@@ -1,53 +1,25 @@
 package swcs.clean.bikestore.before;
 
 import java.util.ArrayList;
+import java.util.List;
+import java.util.function.Predicate;
 
 public class BikeStore {
 
-    ArrayList<Bike> bikes;
+    List<Bike> bikes;
 
     public BikeStore() {
-        this.bikes = new ArrayList();
+        this.bikes = new ArrayList<>();
     }
 
     public boolean addBike(Bike bike) {
         return this.bikes.add(bike);
     }
 
-    public ArrayList findBikes(int type) {
-        ArrayList founds = new ArrayList();
-
-        for (int i = 0; i < bikes.size(); i++) {
-            if (bikes.get(i).type() == type) {
-                founds.add(bikes.get(i));
-            }
-        }
-
-        return founds;
+    // Filter 1: bike -> bike.type() == type
+    // Filter 2:  bike -> bike.price() >= lowerLimit && bike.price() <= upperLimit
+    // Filter 3: bike -> bike.type() == type && bike.price() >= lowerLimit && bike.price() <= upperLimit
+    public List<Bike> findBikes(Predicate<Bike> filter) {
+        return this.bikes.stream().filter(filter).toList();
     }
-
-    public ArrayList findBikes(float lowerLimit, float upperLimit) {
-        ArrayList founds = new ArrayList();
-
-        for (int i = 0; i < bikes.size(); i++) {
-            if (bikes.get(i).price() >= lowerLimit && bikes.get(i).price() <= upperLimit) {
-                founds.add(bikes.get(i));
-            }
-        }
-
-        return founds;
-    }
-
-    public ArrayList findBikes(float lowerLimit, float upperLimit, int type) {
-        ArrayList founds = new ArrayList();
-
-        for (int i = 0; i < bikes.size(); i++) {
-            if ((bikes.get(i).price() >= lowerLimit && bikes.get(i).price() <= upperLimit) && bikes.get(i).type() == type) {
-                founds.add(bikes.get(i));
-            }
-        }
-
-        return founds;
-    }
-
 }

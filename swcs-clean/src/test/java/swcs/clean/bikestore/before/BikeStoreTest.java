@@ -2,7 +2,6 @@ package swcs.clean.bikestore.before;
 
 import org.junit.jupiter.api.Test;
 
-import java.util.ArrayList;
 import java.util.List;
 
 import static org.junit.jupiter.api.Assertions.*;
@@ -10,7 +9,7 @@ import static org.junit.jupiter.api.Assertions.*;
 class BikeStoreTest {
 
     @Test
-    void test_addBike_shouldAdd1Bike() {
+    void testAddBikeShouldAdd1Bike() {
         BikeStore objectUnderTest = new BikeStore();
         Bike bike = new Bike("Cannondale", BikeType.MTB, 1000);
 
@@ -19,7 +18,7 @@ class BikeStoreTest {
     }
 
     @Test
-    void test_findBikes_shouldFindBikeOfTypeMTB() {
+    void testFindBikesShouldFindBikeOfTypeMTB() {
         BikeStore objectUnderTest = new BikeStore();
         objectUnderTest.addBike(new Bike("Bulls", BikeType.MTB, 1000));
         objectUnderTest.addBike(new Bike("Canyon", BikeType.ROAD, 2000));
@@ -34,7 +33,7 @@ class BikeStoreTest {
     }
 
     @Test
-    void test_findBikes_shouldFindBikeWithinPrice1000to2000() {
+    void testFindBikesShouldFindBikeWithinPrice1000to2000() {
         BikeStore objectUnderTest = new BikeStore();
         float lowerLimit = 1000;
         float upperLimit = 2000;

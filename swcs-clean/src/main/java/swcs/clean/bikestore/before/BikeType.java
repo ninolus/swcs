@@ -1,6 +1,6 @@
 package swcs.clean.bikestore.before;
 
-public enum BikeType {
+enum BikeType {
     MTB,
     ROAD,
     CITY

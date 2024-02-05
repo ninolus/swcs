@@ -3,7 +3,7 @@ package swcs.clean.license.before;
 import java.util.HashMap;
 import java.util.Map;
 
-public final class Licences {
+final class Licences {
     private final Map<LicenceType, String> licences;
 
     public Licences() {

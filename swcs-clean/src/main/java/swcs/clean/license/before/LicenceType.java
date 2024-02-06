@@ -2,7 +2,16 @@ package swcs.clean.license.before;
 
 import java.util.Objects;
 
-record LicenceType(String type) {
+public class LicenceType {
+    private final String type;
+
+    public LicenceType(String type) {
+        this.type = type;
+    }
+
+    public String type() {
+        return this.type;
+    }
 
     @Override
     public boolean equals(Object o) {
@@ -17,4 +26,8 @@ record LicenceType(String type) {
         return Objects.equals(this.type, that.type);
     }
 
+    @Override
+    public int hashCode() {
+        return Objects.hash(this.type);
+    }
 }

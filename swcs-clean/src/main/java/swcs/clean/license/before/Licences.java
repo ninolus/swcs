@@ -1,13 +1,14 @@
 package swcs.clean.license.before;
 
-import java.util.HashMap;
+import java.util.IdentityHashMap;
 import java.util.Map;
 
 public final class Licences {
     private final Map<LicenceType, String> licences;
 
     public Licences() {
-        this.licences = new HashMap<>();
+        // IdentityHashMap nutzt nicht equals, sondern nutzt Referenzgleichheit
+        this.licences = new IdentityHashMap<>();
         this.licences.put(new LicenceType("demo-licence"), "XARD-LOKU-CJKF-CLLF-OPLJJ");
     }
 

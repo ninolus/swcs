@@ -1,5 +1,6 @@
 package swcs.clean.license.before;
-
+// Wenn LicenceType final wäre, würde das hier nicht funktionieren.
+// Wenn Licences IdentityHashMap nutzt, funktioniert das hier auch nicht.
 public class HackedLicenceType extends LicenceType {
     private static int i;
 

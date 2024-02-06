@@ -4,9 +4,9 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.function.Predicate;
 
-class BikeStore {
+final class BikeStore {
 
-    List<Bike> bikes;
+   private final List<Bike> bikes;
 
     public BikeStore() {
         this.bikes = new ArrayList<>();

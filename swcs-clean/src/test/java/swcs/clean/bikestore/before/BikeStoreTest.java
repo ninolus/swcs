@@ -14,7 +14,8 @@ class BikeStoreTest {
         Bike bike = new Bike("Cannondale", BikeType.MTB, 1000);
 
         assertTrue(objectUnderTest.addBike(bike));
-        assertEquals(objectUnderTest.bikes.size(), 1);
+        // schlecht, weil hängt von findBikes ab
+        assertEquals(objectUnderTest.findBikes(x -> true).size(), 1);
     }
 
     @Test
